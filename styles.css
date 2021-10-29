@@ -2,15 +2,12 @@
   box-sizing: border-box;
 }
 
-
-
 .row {
   display: flex;
 }
 
 .days {
   justify-content: center;
-  /*  */
   text-align: center;
 }
 
@@ -20,17 +17,39 @@
 }
 
 .column-full {
-  flex-basis: 100%;
+  width: 100%;
 }
-
 
 .header {
   text-align: center;
   padding-top: 2rem;
 }
 
+.hidden {
+  display: none;
+}
+
+.modal-box {
+  position: fixed;
+  background-color: white;
+  width: 500px;
+  height: 200px;
+  top: 50%;
+  left: 50%;
+  margin-top: -100px; /* Negative half of height. */
+  margin-left: -250px;
+}
+
+.overlay {
+  background-color: rgba(0, 0, 0, 0.8);
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+}
+
 .column-seventh {
-  width: 10%;
   height: 100px;
   width: 100px;
   border: 1px solid black;
@@ -38,9 +57,25 @@
   border-radius: 10px;
 }
 
+.text-center {
+  text-align: center;
+}
+
 .each-day {
   justify-content: space-between;
   cursor: pointer;
+}
+
+tr:nth-child(odd) {
+  background-color: lightgray;
+}
+
+.button-design {
+  padding: 10px;
+  border-radius: 4px;
+  width: 15%;
+  background-color: lightgray;
+  box-shadow: 10px 10px 30px 0 rgba(0, 0, 0, 0.75);
 }
 
 button {
@@ -55,25 +90,12 @@ th {
   text-align: left;
 }
 
-
-table tr td th{
-  border: 1px solid black
+table tr td th {
+  border: 1px solid black;
 }
 
 table {
   width: 100%;
   border-radius: 4px;
   border: 1px solid black;
-}
-
-tr:nth-child(odd){
-  background-color: lightsteelblue;
-}
-
-.button-design {
-  padding: 10px; 
-  border-radius: 4px; 
-  width: 15%; 
-  background-color: lightgray; 
-  filter: drop-shadow(7px 5px 4px black);
 }
