@@ -1,5 +1,6 @@
 * {
   box-sizing: border-box;
+  margin: 0 auto;
 }
 
 .row {
@@ -33,7 +34,7 @@
   position: fixed;
   background-color: white;
   width: 500px;
-  height: 200px;
+  height: 225px;
   top: 50%;
   left: 50%;
   margin-top: -100px; /* Negative half of height. */
@@ -66,6 +67,10 @@
   cursor: pointer;
 }
 
+.width-90 {
+  width: 90%;
+}
+
 tr:nth-child(odd) {
   background-color: lightgray;
 }
@@ -76,6 +81,10 @@ tr:nth-child(odd) {
   width: 15%;
   background-color: lightgray;
   box-shadow: 10px 10px 30px 0 rgba(0, 0, 0, 0.75);
+}
+
+textarea {
+  resize: none;
 }
 
 button {
@@ -98,4 +107,21 @@ table {
   width: 100%;
   border-radius: 4px;
   border: 1px solid black;
+}
+
+.day {
+  margin: 0.7rem 1rem;
+}
+
+.time {
+  margin: 0.7rem 1rem;
+}
+
+.description {
+  margin: 1rem;
+}
+
+.float button {
+  float: right;
+  margin-right: 1rem;
 }
