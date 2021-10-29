@@ -1,4 +1,5 @@
 /* exported data */
+/* global data */
 var data = {
   sunday: [],
   monday: [],
@@ -9,7 +10,7 @@ var data = {
   saturday: []
 };
 
-var previousEntryJSON = localStorage.getItem('orm');
+var previousEntryJSON = localStorage.getItem('form');
 if (previousEntryJSON !== null) {
   data = JSON.parse(previousEntryJSON);
 }
@@ -17,6 +18,7 @@ if (previousEntryJSON !== null) {
 window.addEventListener('beforeunload', updateStorage);
 
 function updateStorage(event) {
+  $tbody.innerHTML = '';
   var entriesJSON = JSON.stringify(data);
   localStorage.setItem('form', entriesJSON);
 }

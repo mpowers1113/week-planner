@@ -64,13 +64,13 @@
             </div>
           </div>
           <div class="row">
-            <textarea class="description width-90" placeholder="description" rows="5" >
+            <textarea class="description width-90" placeholder="description" rows="5">
 
             </textarea>
           </div>
           <div class="float">
             <button class="submit-button" type="submit">Save</button>
-</div>
+          </div>
         </form>
       </div>
     </div>
@@ -86,27 +86,27 @@
     <div class="row days">
       <div class="column-full">
         <div class="row each-day">
-          <div class="column-seventh sunday">
+          <div data-day = 'sunday' class="column-seventh sunday">
 
             Sunday
           </div>
 
-          <div class="column-seventh monday">
+          <div data-day="monday" class="column-seventh monday">
             Monday
           </div>
-          <div class="column-seventh tuesday">
+          <div data-day="tuesday" class="column-seventh tuesday">
             Tuesday
           </div>
-          <div class="column-seventh wednesday">
+          <div data-day="wednesday" class="column-seventh wednesday">
             Wednesday
           </div>
-          <div class="column-seventh thursday">
+          <div data-day="thursday" class="column-seventh thursday">
             Thursday
           </div>
-          <div class="column-seventh friday">
+          <div data-day="friday" class="column-seventh friday">
             Friday
           </div>
-          <div class="column-seventh saturday">
+          <div data-day="saturday" class="column-seventh saturday">
             Saturday
           </div>
         </div>
@@ -119,7 +119,7 @@
     </div>
     <div class="row">
       <div class="column-full header">
-        <h3 class="scheduled-events-for">Scheduled Events for: Monday</h3>
+        <h3>Scheduled Events for: <span class="scheduled-events-for">Monday</span></h3>
       </div>
     </div>
     <table>
@@ -132,7 +132,7 @@
         </tr>
       </thead>
       <tbody>
-        <tr>
+        <!-- <tr>
           <td>1200</td>
           <td>Do the laundry</td>
 
@@ -160,7 +160,7 @@
         <tr>
           <td>2333</td>
           <td>Go to sleep</td>
-        </tr>
+        </tr> -->
       </tbody>
     </table>
   </div>
