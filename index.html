@@ -1,12 +1,92 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Week Planner</title>
   <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
+  <div class="container">
+
+    <div class="row">
+      <div class="column-full header">
+        <h1>Weekly Planner</h1>
+      </div>
+    </div>
+    <div class="row days">
+      <div class="column-full">
+        <div class="row each-day">
+          <div class="column-seventh sunday">
+
+            Sunday
+          </div>
+
+          <div class="column-seventh monday">
+            Monday
+          </div>
+          <div class="column-seventh tuesday">
+            Tuesday
+          </div>
+          <div class="column-seventh wednesday">
+            Wednesday
+          </div>
+          <div class="column-seventh thursday">
+            Thursday
+          </div>
+          <div class="column-seventh friday">
+            Friday
+          </div>
+          <div class="column-seventh saturday">
+            Saturday
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="column-full header">
+        <button>Add Entry</button>
+      </div>
+    </div>
+    <div class="row">
+      <div class="column-full header">
+        <h3 class="scheduled-events-for">Scheduled Events for: Monday</h3>
+      </div>
+    </div>
+    <table>
+      <thead>
+        <tr>
+          <th>
+            Time
+          </th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>1200</td>
+          <td>Do the laundry</td>
+
+        </tr>
+        <tr>
+          <td>2333</td>
+          <td>Go to sleep</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- <div class="overlay hidden">
+    <div class="column">
+      <h2>Are you sure you'd like to delete this entry?</h2>
+      <div class="row modal">
+        <button class="cancel">CANCEL</button><button class="confirm">CONFIRM</button>
+      </div>
+    </div>
+  </div> -->
   <script src="main.js"></script>
 </body>
+
 </html>

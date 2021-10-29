@@ -1,0 +1,71 @@
+* {
+  box-sizing: border-box;
+}
+
+
+
+.row {
+  display: flex;
+}
+
+.days {
+  justify-content: center;
+  /*  */
+  text-align: center;
+}
+
+.container {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.column-full {
+  flex-basis: 100%;
+}
+
+
+.header {
+  text-align: center;
+  padding-top: 2rem;
+}
+
+.column-seventh {
+  width: 10%;
+  height: 100px;
+  width: 100px;
+  border: 1px solid black;
+  line-height: 5.5;
+  border-radius: 10px;
+}
+
+.each-day {
+  justify-content: space-between;
+  cursor: pointer;
+}
+
+button {
+  background-color: white;
+  outline: none;
+  width: 6rem;
+  cursor: pointer;
+}
+
+th {
+  background-color: darkgray;
+}
+
+tr {
+  text-align: center;
+}
+
+table tr td th{
+  border: 1px solid black
+}
+
+table {
+  width: 35%;
+}
+
+tr:nth-child(odd){
+  background-color: lightsteelblue;
+}
