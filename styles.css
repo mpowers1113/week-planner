@@ -30,6 +30,23 @@
   display: none;
 }
 
+.delete-button {
+  float: right;
+  margin-right: 1rem;
+  padding: 0 25px;
+  background-color: red;
+  color: white;
+}
+
+.delete-overlay {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
 .modal-box {
   position: fixed;
   background-color: white;
@@ -39,6 +56,14 @@
   left: 50%;
   margin-top: -100px; /* Negative half of height. */
   margin-left: -250px;
+}
+
+.pb {
+  padding-bottom: 2rem;
+}
+
+.col-half {
+  width: 50%;
 }
 
 .overlay {
@@ -58,8 +83,25 @@
   border-radius: 10px;
 }
 
+.ml {
+  margin-left: 15px;
+}
+
+.mr {
+  margin-left: 15px;
+}
+
+.hover-color:hover {
+  cursor: pointer;
+  background-color: lightskyblue;
+}
+
 .text-center {
   text-align: center;
+}
+
+.text-right {
+  text-align: end;
 }
 
 .each-day {
@@ -124,4 +166,8 @@ table {
 .float button {
   float: right;
   margin-right: 1rem;
+}
+
+body {
+  font-family: sans-serif;
 }

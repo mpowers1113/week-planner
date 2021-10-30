@@ -1,5 +1,3 @@
-/* global data */
-/* exported data */
 
 var data = {
   sunday: [],
@@ -8,7 +6,8 @@ var data = {
   wednesday: [],
   thursday: [],
   friday: [],
-  saturday: []
+  saturday: [],
+  entryId: 0
 };
 
 var previousEntryJSON = localStorage.getItem('form');
@@ -37,11 +36,15 @@ function submitDataHandler(event) {
   event.preventDefault();
   var userSubmission = {
     time: $time.value,
-    description: $description.value
+    description: $description.value,
+    id: data.entryId
   };
+  data.entryId++;
+
   data[$day.value].push(userSubmission);
   var entryValues = renderEntry(userSubmission);
   $tbody.appendChild(entryValues);
+  $form.reset();
 }
 $form.addEventListener('submit', submitDataHandler);
 $submitButton.addEventListener('click', showModal);
@@ -60,8 +63,15 @@ function renderEntry(entries) {
   $tdTime.textContent = entries.time;
   $tr.appendChild($tdTime);
   var $tdDescription = document.createElement('td');
+  $tdDescription.setAttribute('id', entries.id);
+
   $tdDescription.textContent = entries.description;
   $tr.appendChild($tdDescription);
+
+  var $deleteButton = document.createElement('button');
+  $deleteButton.setAttribute('class', 'delete-button');
+  $deleteButton.textContent = 'Delete';
+  $tdDescription.appendChild($deleteButton);
   return $tr;
 }
 
@@ -85,6 +95,7 @@ var $scheduledDays = document.querySelector('.scheduled-events-for');
 function renderDay(event) {
   $tbody.innerHTML = '';
   var dataDay = event.target.getAttribute('data-day');
+  targetDay = dataDay;
   if (data[dataDay] === []) {
     return;
   }
@@ -94,4 +105,42 @@ function renderDay(event) {
     $tbody.appendChild(renderEntry(eachEntry));
   }
 
+}
+
+var $deleteOverlay = document.querySelector('.delete-overlay');
+var $table = document.querySelector('table');
+$table.addEventListener('click', deleteModal);
+var targetId;
+var targetTr;
+function deleteModal(event) {
+  if (event.target.matches('.delete-button')) {
+    var target = event.target.closest('td');
+    targetTr = target.closest('tr');
+    $deleteOverlay.classList.remove('hidden');
+  }
+  targetId = target.getAttribute('id');
+
+}
+
+var $yesButton = document.querySelector('.yes');
+$yesButton.addEventListener('click', deleteEntry);
+var $noButton = document.querySelector('.no');
+$noButton.addEventListener('click', deleteEntry);
+
+var targetDay;
+
+function deleteEntry(event) {
+  if (event.target.matches('.no')) {
+    $deleteOverlay.classList.add('hidden');
+
+  }
+  if (event.target.matches('.yes')) {
+    for (var i = 0; i < data[targetDay].length; i++) {
+      if (data[targetDay][i].id === Number(targetId)) {
+        data[targetDay].splice(i, 1);
+        targetTr.remove();
+        $deleteOverlay.classList.add('hidden');
+      }
+    }
+  }
 }

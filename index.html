@@ -9,6 +9,28 @@
 </head>
 
 <body>
+  <div class="delete-overlay hidden">
+    <div class="modal-box">
+      <div class="row">
+        <div class="column-full">
+          <h1 class="text-center pb">Delete Entry</h1>
+        </div>
+      </div>
+      <div class="row">
+        <div class="column-full">
+          <h4 class="text-center pb">Are you sure you want to delete this entry?</h4>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-half text-right">
+          <button class="yes hover-color mr">Yes</button>
+        </div>
+        <div class="col-half">
+          <button class="no hover-color ml">No</button>
+        </div>
+      </div>
+      </div>
+    </div>
   <div class="overlay hidden ">
     <div class="column-full">
       <div class="modal-box ">
@@ -86,7 +108,7 @@
     <div class="row days">
       <div class="column-full">
         <div class="row each-day">
-          <div data-day = 'sunday' class="column-seventh sunday">
+          <div data-day = "sunday" class="column-seventh sunday">
 
             Sunday
           </div>
@@ -134,7 +156,9 @@
       <tbody>
         <!-- <tr>
           <td>1200</td>
-          <td>Do the laundry</td>
+          <td>Do the laundry
+            <button class="delete-button">Delete</button>
+          </td>
 
         </tr>
         <tr>
